@@ -19,15 +19,20 @@ public class SequentialSearch {
 		
 		
 		int position = 0;
+		boolean correct;
 		for (int i = 0; i < randomnumber.length; i++) {
 			if (searchingnumber == i) {
-				boolean correct = true;
+				correct = true;
 				position = i;
 				break;
 			}
 		}
 		
-
+		if (correct) {
+			System.out.println("找到此數，在位置" + position);
+		} else {
+			System.out.println("找無此數!");
+		}
 
 		
 		
