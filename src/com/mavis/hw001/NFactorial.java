@@ -26,7 +26,7 @@ public class NFactorial {
 	
 	public void calculator(){
 		int type = scanner.nextInt();
-		int finalans = 0;
+		int finalans = 1;
 		if(type != 0) {
 			for(int a = type; a >= 1 ; a--) {
 				finalans = finalans * a;
