@@ -11,8 +11,8 @@ public class ExchangeSort {
 		Random r = new Random();
 		int randomnumber[] = new int[10];
 
-		for (int i = 0; i < 10; i++) {
-			randomnumber[i] = (int) r.nextInt((100) + 1);
+		for (int h = 0; h < 10; h++) {
+			randomnumber[h] = (int) r.nextInt((100) + 1);
 		}
 
 		int i, j;
