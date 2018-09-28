@@ -10,7 +10,7 @@ public class SequentialSearch {
 		Random r = new Random();
 		int randomnumber[] = new int[10];
 		for (int h = 0; h < 10; h++) {
-			randomnumber[h] = (int) r.nextInt((100) + 1);
+			randomnumber[h] = (int) r.nextInt((10) + 1);
 		}
 		
 		System.out.print("Number you are searching：");
@@ -19,9 +19,9 @@ public class SequentialSearch {
 		
 		
 		int position = 0;
-		boolean correct;
+		boolean correct = false;
 		for (int i = 0; i < randomnumber.length; i++) {
-			if (searchingnumber == i) {
+			if (searchingnumber == randomnumber[i]) {
 				correct = true;
 				position = i;
 				break;
@@ -29,19 +29,14 @@ public class SequentialSearch {
 		}
 		
 		if (correct) {
-			System.out.println("找到此數，在位置" + position);
+			System.out.println("Find the number in" + position);
 		} else {
-			System.out.println("找無此數!");
+			System.out.println("Error!");
 		}
-
-		
 		
 		for (int x = 0; x < randomnumber.length; x++) {
 			System.out.print(randomnumber[x] + " ");
 		}
-		
-		
-		
 	}
 
 }
