@@ -9,26 +9,33 @@ public class SelectionSort {
 	public static void main(String[] args) {
 
 		Random r = new Random();
-		List<Integer> randomnumber = new ArrayList<>();
+		int randomnumber[] = new int[10];
 
 		for (int i = 0; i < 10; i++) {
-			randomnumber.add(r.nextInt((50) + 1));
+			randomnumber[i] = (int) r.nextInt((20) + 1);
 		}
 
 		int i, j;
 		int min, temp;
-		int rightnumber = randomnumber.get(i);
-		for (i = 0; i < randomnumber.size(); i++) {
+		int y = 0;
+		for (i = 0; i < randomnumber.length; i++) {
 			min = i;
-			for (j = i + 1; j < randomnumber.size(); j++)
-				if (randomnumber.get(j) < randomnumber.get(min)) {
+			for (j = i + 1; j < randomnumber.length; j++)
+				if (randomnumber[i] > randomnumber[j]) {
 					min = j;
-					temp = randomnumber.get(i);
-					rightnumber = randomnumber.get(min);
-					randomnumber.get(min) = temp;
+					temp = randomnumber[i];
+					randomnumber[i] = randomnumber[j];
+					randomnumber[j] = temp;
 				}
 		}
-		System.out.print(randomnumber);
+		for(int x = 0 ; x < randomnumber.length; x++) {
+			 y = randomnumber[x];
+			 System.out.print( y + " ");
+		}
+		
+		
+		
 	}
+	
 
 }
