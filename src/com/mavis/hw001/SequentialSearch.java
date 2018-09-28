@@ -29,7 +29,7 @@ public class SequentialSearch {
 		}
 		
 		if (correct) {
-			System.out.println("Find the number in" + position);
+			System.out.println("Find the number in" + (position+1));
 		} else {
 			System.out.println("Error!");
 		}
