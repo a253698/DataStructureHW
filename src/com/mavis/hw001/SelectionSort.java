@@ -13,14 +13,16 @@ public class SelectionSort {
 		for (int i = 0; i < 10; i++) {
 			randomnumber[i] = (int) r.nextInt((100) + 1);
 		}
+		
+		//先產生亂數
 
 		int min, temp;
 		for (int i = 0; i < randomnumber.length - 1; i++) {
 			min = i;
+			
 			for (int j = i + 1; j < randomnumber.length; j++) {
 				if (randomnumber[i] < randomnumber[j]) {
 					min = j;
-
 					if (i != min) {
 						temp = randomnumber[i];
 						randomnumber[i] = randomnumber[min];
@@ -28,6 +30,8 @@ public class SelectionSort {
 					}
 				}
 			}
+			//在數列中找出最小者，並重新換位
+			
 //			temp = randomnumber[min];
 //			randomnumber[min] = randomnumber[i];
 //			randomnumber[i] = temp;
