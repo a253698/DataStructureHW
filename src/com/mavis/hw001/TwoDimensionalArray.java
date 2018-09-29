@@ -10,15 +10,16 @@ public class TwoDimensionalArray {
 	int findingNumber = s.nextInt();
 
 	public TwoDimensionalArray() {
+		
 
 	}
 
 	public static void main(String[] args) {
-		TwoDimensionalArray tda = new TwoDimensionalArray();
 		System.out.println("Looking number:");
+		TwoDimensionalArray tda = new TwoDimensionalArray();
 		tda.Random();
-//		tda.ScannerNumber();
-		tda.ScannerNumber();
+		tda.Search();
+		tda.Report();
 	}
 
 	public void Random() {
@@ -67,6 +68,31 @@ public class TwoDimensionalArray {
 			}
 			return;
 		}
+	
+	public void Report() {
+		String keyin;
+		boolean a = true;
+		while (a) {
+			int x=0;
+			System.out.println("輸入比對值:");
+			keyin = s.nextLine();
+			findingNumber = Integer.parseInt(keyin);
+			if(x==0) {
+				System.out.println("沒有找到"+findingNumber);
+				break;
+			}
+			else {
+				System.out.println("在第" + x + "個位置找到" + findingNumber);
+				break;
+			}
+		}
+		System.out.println("資料內容:");
+		for (int i = 0; i < 9; i++) {
+			System.out.print(randomnumber[i]+"\t");
+		}
+		
+	}
+	
 	}
 
 
