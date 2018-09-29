@@ -5,13 +5,11 @@ import java.util.Scanner;
 
 public class TwoDimensionalArray {
 	
-	int randomnumber[] = new int[10];
+	int randomnumber[] = new int[5];
 	Scanner s = new Scanner(System.in);
 	int findingNumber = s.nextInt();
 
 	public TwoDimensionalArray() {
-		
-
 	}
 
 	public static void main(String[] args) {
@@ -24,9 +22,8 @@ public class TwoDimensionalArray {
 
 	public void Random() {
 		Random r = new Random();
-//		int randomnumber[] = new int[10];
-		for (int h = 0; h < 10; h++) {
-			randomnumber[h] = (int) r.nextInt((100) + 1);
+		for (int h = 0; h < 5; h++) {
+			randomnumber[h] = (int) r.nextInt((5) + 1);
 		}
 
 		int i, j;
@@ -45,6 +42,7 @@ public class TwoDimensionalArray {
 			y = randomnumber[x];
 			System.out.print(y + " ");
 		}
+		System.out.println(" ");
 	}
 
 	public void ScannerNumber() {
@@ -74,9 +72,6 @@ public class TwoDimensionalArray {
 		boolean a = true;
 		while (a) {
 			int x=0;
-			System.out.println("輸入比對值:");
-			keyin = s.nextLine();
-			findingNumber = Integer.parseInt(keyin);
 			if(x==0) {
 				System.out.println("沒有找到"+findingNumber);
 				break;
@@ -86,10 +81,10 @@ public class TwoDimensionalArray {
 				break;
 			}
 		}
-		System.out.println("資料內容:");
-		for (int i = 0; i < 9; i++) {
-			System.out.print(randomnumber[i]+"\t");
-		}
+//		System.out.println("資料內容:");
+//		for (int i = 0; i < 9; i++) {
+//			System.out.print(randomnumber[i]+"\t");
+//		}
 		
 	}
 	
