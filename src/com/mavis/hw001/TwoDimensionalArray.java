@@ -4,6 +4,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TwoDimensionalArray {
+	
+	// this is BinarySearch
 
 	int randomnumber[] = new int[6];
 	Scanner s = new Scanner(System.in);

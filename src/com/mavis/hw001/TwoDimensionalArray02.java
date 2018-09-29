@@ -3,6 +3,8 @@ package com.mavis.hw001;
 import java.util.Scanner;
 
 public class TwoDimensionalArray02 {
+	
+	//// this is BinarySearch
 
 	// 傳入的數序需先排序,由小至大
 	public static int BinarySearch(int[] number, int item) {
