@@ -17,7 +17,7 @@ public class TwoDimensionalArray {
 		System.out.println("Looking number:");
 		TwoDimensionalArray tda = new TwoDimensionalArray();
 		tda.Random();
-		tda.Search();
+//		tda.Search();
 		tda.Report();
 	}
 
@@ -51,7 +51,7 @@ public class TwoDimensionalArray {
 //		int findingNumber = s.nextInt();
 	}
 
-	public void Search(int randomnumber[], int findingNumber) {
+	public  void Search(int randomnumber[], int findingNumber) {
 		int left = 0;
 		int right = (randomnumber.length - 1);
 		int middle = ((left + right) / 2);
@@ -73,10 +73,10 @@ public class TwoDimensionalArray {
 
 	public void Report() {
 		boolean a = true;
-		x = Search(randomnumber, findingNumber);
+
 		int x = 0;
 		while (a) {
-
+//			x = Search(randomnumber, findingNumber);
 			if (x == 0) {
 				System.out.println("沒有找到" + findingNumber);
 				break;
