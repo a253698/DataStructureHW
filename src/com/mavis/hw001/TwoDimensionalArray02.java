@@ -38,13 +38,14 @@ public class TwoDimensionalArray02 {
 		for (int i = 0; i < number.length; i++) {
 			System.out.print(number[i] + " ");
 		}
+		System.out.println("  ");
 
 		System.out.println("請輸入要查詢數:");
 		int findingNumber = s.nextInt();
 
 		int ans = BinarySearch(number, findingNumber);
 		if (ans > -1) {
-			System.out.println("找到資料!位置在:" + ans);
+			System.out.println("找到資料!位置在:" + (ans+1));
 		} else
 			System.out.println("Error! 找不到 !!");
 
