@@ -4,12 +4,13 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TwoDimensionalArray {
-	
-	int randomnumber[] = new int[5];
+
+	int randomnumber[] = new int[6];
 	Scanner s = new Scanner(System.in);
 	int findingNumber = s.nextInt();
 
-	public TwoDimensionalArray() {
+	TwoDimensionalArray() {
+
 	}
 
 	public static void main(String[] args) {
@@ -22,8 +23,8 @@ public class TwoDimensionalArray {
 
 	public void Random() {
 		Random r = new Random();
-		for (int h = 0; h < 5; h++) {
-			randomnumber[h] = (int) r.nextInt((5) + 1);
+		for (int h = 0; h < 6; h++) {
+			randomnumber[h] = (int) r.nextInt((10) + 1);
 		}
 
 		int i, j;
@@ -49,45 +50,42 @@ public class TwoDimensionalArray {
 //		Scanner s = new Scanner(System.in);
 //		int findingNumber = s.nextInt();
 	}
-	
-	public void Search() {
+
+	public void Search(int randomnumber[], int findingNumber) {
 		int left = 0;
-		int right = (randomnumber.length-1) ;
-		while(right>=left) {
-			 int middle = ((left+right)/2);
-			 if(findingNumber < randomnumber[middle]) {
-				 System.out.println(findingNumber + "在" + (left) + "[" + randomnumber[left] + "]及中間值" + middle + "[" + randomnumber[left] + "]，找左半邊");
-				 right = middle - 1;
-			 }else if (findingNumber > randomnumber[middle]) {
-					System.out.println(findingNumber + "在" + (middle) + "[" + randomnumber[middle] + "]及中間值" + right + "[" + randomnumber[right] + "]，找右半邊");
+		int right = (randomnumber.length - 1);
+		int middle = ((left + right) / 2);
+		while (right >= left) {
+			if (findingNumber < randomnumber[middle]) {
+				System.out.println("找左半邊");
+				right = middle - 1;
+			} else {
+				if (findingNumber > randomnumber[middle]) {
+					System.out.println("找右半邊");
 					left = middle + 1;
-				} else
+				} else {
 					return;
+				}
 			}
 			return;
 		}
-	
+	}
+
 	public void Report() {
-		String keyin;
 		boolean a = true;
+		x = Search(randomnumber, findingNumber);
+		int x = 0;
 		while (a) {
-			int x=0;
-			if(x==0) {
-				System.out.println("沒有找到"+findingNumber);
+
+			if (x == 0) {
+				System.out.println("沒有找到" + findingNumber);
 				break;
-			}
-			else {
+			} else {
 				System.out.println("在第" + x + "個位置找到" + findingNumber);
 				break;
 			}
 		}
-//		System.out.println("資料內容:");
-//		for (int i = 0; i < 9; i++) {
-//			System.out.print(randomnumber[i]+"\t");
-//		}
-		
-	}
-	
+
 	}
 
-
+}
