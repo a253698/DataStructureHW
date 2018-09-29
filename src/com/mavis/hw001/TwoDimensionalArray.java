@@ -4,90 +4,54 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class TwoDimensionalArray {
-	
-	// this is BinarySearch
 
-	int randomnumber[] = new int[6];
-	Scanner s = new Scanner(System.in);
-	int findingNumber = s.nextInt();
-
-	TwoDimensionalArray() {
-
-	}
+//		 A  *   B   =   C
+//		a b    e f    ae+bg af+bh
+//    	c d    g h 	  ce+dg cf+dh
+//	
+//      1 2    3 4    1*3+2*7 1*4+2*8
+//	    5 6    7 8    5*3+6*7 5*4+6*8
 
 	public static void main(String[] args) {
-		System.out.println("Looking number:");
-		TwoDimensionalArray tda = new TwoDimensionalArray();
-		tda.Random();
-//		tda.Search();
-		tda.Report();
+		int A[][] = { { 1, 2 }, { 5, 6 } };
+		int B[][] = { { 3, 4 }, { 7, 8 } };
+		System.out.println("A matrix:");
+		print(A);
+		System.out.println("B matrix:");
+		print(B);
+		System.out.println("C matrix:");
+		int C[][] = Mul(A, B);
+		print(C);
 	}
 
-	public void Random() {
-		Random r = new Random();
-		for (int h = 0; h < 6; h++) {
-			randomnumber[h] = (int) r.nextInt((10) + 1);
-		}
-
-		int i, j;
-		int min, temp;
-		for (i = 0; i < randomnumber.length; i++) {
-			for (j = i + 1; j < randomnumber.length; j++)
-				if (randomnumber[i] > randomnumber[j]) {
-					temp = randomnumber[i];
-					randomnumber[i] = randomnumber[j];
-					randomnumber[j] = temp;
-				}
-		}
-
-		int y = 0;
-		for (int x = 0; x < randomnumber.length; x++) {
-			y = randomnumber[x];
-			System.out.print(y + " ");
-		}
-		System.out.println(" ");
-	}
-
-	public void ScannerNumber() {
-//		Scanner s = new Scanner(System.in);
-//		int findingNumber = s.nextInt();
-	}
-
-	public  void Search(int randomnumber[], int findingNumber) {
-		int left = 0;
-		int right = (randomnumber.length - 1);
-		int middle = ((left + right) / 2);
-		while (right >= left) {
-			if (findingNumber < randomnumber[middle]) {
-				System.out.println("找左半邊");
-				right = middle - 1;
-			} else {
-				if (findingNumber > randomnumber[middle]) {
-					System.out.println("找右半邊");
-					left = middle + 1;
-				} else {
-					return;
-				}
-			}
-			return;
-		}
-	}
-
-	public void Report() {
-		boolean a = true;
-
-		int x = 0;
-		while (a) {
-//			x = Search(randomnumber, findingNumber);
-			if (x == 0) {
-				System.out.println("沒有找到" + findingNumber);
-				break;
-			} else {
-				System.out.println("在第" + x + "個位置找到" + findingNumber);
-				break;
+	static int[][] Mul(int A[][], int B[][]) {
+		// 先確認矩陣式是否能相乘
+		for (int i = 0; i < A.length; i++) {
+			if (A[i].length != B.length) {
+				System.out.println("不能相乘");
+				return null;
 			}
 		}
 
+		// 生成A*B的矩陣
+		int[][] C = new int[A.length][B[0].length];
+
+		for (int i = 0; i < C.length; i++) {
+			for (int j = 0; j < C[i].length; j++) {
+				for (int k = 0; k < A[0].length; k++) {
+					C[i][j] += A[i][k] * B[k][j];
+				}
+			}
+		}
+		return C;
 	}
 
+	static void print(int Matrix[][]) {
+		for (int x = 0; x < Matrix.length; x++) {
+			for (int y = 0; y < Matrix[x].length; y++) {
+				System.out.print("  " + Matrix[x][y]);
+			}
+			System.out.println();
+		}
+	}
 }
