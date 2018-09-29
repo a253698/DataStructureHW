@@ -5,17 +5,19 @@ import java.util.Scanner;
 public interface BinarySearch02 {
 
 	// 傳入的數序需先排序,由小至大
-	public static int BinarySearch(int[] number, int item) {
+	// number − This is the array to be searched.
+    // item − This is the value to be searched for.
+	public static int BinarySearch(int[] number, int findingNumber) {
 		int left = 0;
 		int right = number.length;
 
 		// 左邊的索引位置小於右邊索引的位置
 		while (left <= right) {
 			int mid = (left + right) / 2;
-			if (number[mid] == item)
+			if (number[mid] == findingNumber)
 				return mid;
 			else {
-				if (number[mid] > item) {
+				if (number[mid] > findingNumber) {
 					right = mid - 1;
 					System.out.println("找左半邊");
 				} else {
@@ -38,9 +40,10 @@ public interface BinarySearch02 {
 		for (int i = 0; i < number.length; i++) {
 			System.out.print(number[i] + " ");
 		}
+
 		System.out.println("  ");
 
-		System.out.println("請輸入要查詢數:");
+		System.out.println("Looking number:");
 		int findingNumber = s.nextInt();
 
 		int ans = BinarySearch(number, findingNumber);

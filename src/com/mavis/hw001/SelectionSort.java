@@ -17,18 +17,20 @@ public class SelectionSort {
 		//先產生亂數
 
 		int min, temp;
-		for (int i = 0; i < randomnumber.length - 1; i++) {
+		for (int i = 0; i < randomnumber.length; i++) {
 			min = i;
 			
 			for (int j = i + 1; j < randomnumber.length; j++) {
-				if (randomnumber[i] < randomnumber[j]) {
+				if (randomnumber[min] > randomnumber[j]) {
 					min = j;
-					if (i != min) {
-						temp = randomnumber[i];
-						randomnumber[i] = randomnumber[min];
-						randomnumber[min] = temp;
+					
 					}
 				}
+			if (i != min) {
+				temp = randomnumber[i];
+				randomnumber[i] = randomnumber[min];
+				randomnumber[min] = temp;
+			
 			}
 			//在數列中找出最小者，並重新換位
 			
