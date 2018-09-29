@@ -16,10 +16,10 @@ public class BinarySearch {
 
 		public static void main(String[] args) {
 			System.out.println("Looking number:");
-			BinarySearch tda = new BinarySearch();
-			tda.Random();
-//			tda.Search();
-			tda.Report();
+			BinarySearch binarySearch = new BinarySearch();
+			binarySearch.Random();
+//			binarySearch.Search();
+			binarySearch.Report();
 		}
 
 		public void Random() {
