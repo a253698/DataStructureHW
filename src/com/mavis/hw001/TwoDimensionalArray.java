@@ -41,7 +41,7 @@ public class TwoDimensionalArray {
 			for (int j = 0; j < C[i].length; j++) {
 				// 利用B的col定義新矩陣的col
 				for (int k = 0; k < A[0].length; k++) {
-					
+
 					C[i][j] += A[i][k] * B[k][j];
 				}
 			}

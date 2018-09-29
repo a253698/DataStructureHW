@@ -32,7 +32,7 @@ public interface BinarySearch02 {
 		Scanner s = new Scanner(System.in);
 
 		// 二元搜尋範例
-		int[] number = { 2, 4, 6, 8, 10, 12, 13, 14, 15, 16 };
+		int[] number = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
 
 		System.out.println("原始數列:");
 		for (int i = 0; i < number.length; i++) {
